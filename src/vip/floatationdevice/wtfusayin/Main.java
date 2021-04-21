@@ -2,6 +2,7 @@ package vip.floatationdevice.wtfusayin;
 import java.util.*;
 public class Main
 {
+    final static Random r=new Random();
     final static Scanner i=new Scanner(System.in);
     static StringBuilder pre = new StringBuilder();
     static StringBuilder post=new StringBuilder();
@@ -14,7 +15,7 @@ public class Main
                 post.setLength(0);
                 for(;pre.length()!=0;)
                 {
-                    int a=new Random().nextInt(pre.length());
+                    int a=r.nextInt(pre.length());
                     post.append(pre.charAt(a));
                     pre.delete(a,a+1);
                 }
