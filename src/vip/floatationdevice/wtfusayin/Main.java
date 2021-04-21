@@ -16,7 +16,7 @@ public class Main
                 post.setLength(0);
                 for(;pre.length()!=0;)
                 {
-                    int a=r.nextInt(pre.length());
+                    a=r.nextInt(pre.length());
                     post.append(pre.charAt(a));
                     pre.delete(a,a+1);
                 }
