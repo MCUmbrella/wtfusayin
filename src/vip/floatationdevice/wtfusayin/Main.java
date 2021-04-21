@@ -22,7 +22,7 @@ public class Main
             }
         }else
         {
-            for(String s:args){pre.append(s);}
+            for(String s:args){pre.append(s).append(' ');}
             for(;pre.length()!=0;)
             {
                 int a=new Random().nextInt(pre.length());
