@@ -4,6 +4,7 @@ public class Main
 {
     final static Random r=new Random();
     final static Scanner i=new Scanner(System.in);
+    static int a;
     static StringBuilder pre = new StringBuilder();
     static StringBuilder post=new StringBuilder();
     public static void main(String args[])
@@ -26,7 +27,7 @@ public class Main
             for(String s:args){pre.append(s).append(' ');}
             for(;pre.length()!=0;)
             {
-                int a=new Random().nextInt(pre.length());
+                a=new Random().nextInt(pre.length());
                 post.append(pre.charAt(a));
                 pre.delete(a,a+1);
             }
