@@ -9,7 +9,7 @@ public class Main
     {
         if(args.length==0)
         {
-            for(;pre.append(i.nextLine()).length()!=0;)
+            for(System.out.print("? ");pre.append(i.nextLine()).length()!=0;)
             {
                 post.setLength(0);
                 for(;pre.length()!=0;)
@@ -18,7 +18,7 @@ public class Main
                     post.append(pre.charAt(a));
                     pre.delete(a,a+1);
                 }
-                System.out.println(post.toString());
+                System.out.print(post.toString()+"\n? ");
             }
         }else
         {
