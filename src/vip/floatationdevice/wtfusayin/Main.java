@@ -1,6 +1,7 @@
 package vip.floatationdevice.wtfusayin;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.NoSuchElementException;
 public class Main
 {
     final static Random r=new Random();
@@ -10,30 +11,33 @@ public class Main
     static StringBuilder post=new StringBuilder();
     public static void main(String args[])
     {
-        if(args.length==0)
+        try
         {
-            for(System.out.print("? ");pre.append(i.nextLine()).length()!=0;)
+            if(args.length==0)
             {
-                post.setLength(0);
+                for(System.out.print("? ");pre.append(i.nextLine()).length()!=0;)
+                {
+                    post.setLength(0);
+                    for(;pre.length()!=0;)
+                    {
+                        a=r.nextInt(pre.length());
+                        post.append(pre.charAt(a));
+                        pre.delete(a,a+1);
+                    }
+                    System.out.print(post.toString()+"\n? ");
+                }
+            }else
+            {
+                for(String s:args){pre.append(s).append(' ');}
+                pre.delete(pre.length()-1,pre.length());
                 for(;pre.length()!=0;)
                 {
                     a=r.nextInt(pre.length());
                     post.append(pre.charAt(a));
                     pre.delete(a,a+1);
                 }
-                System.out.print(post.toString()+"\n? ");
+                System.out.println(post.toString());
             }
-        }else
-        {
-            for(String s:args){pre.append(s).append(' ');}
-            pre.delete(pre.length()-1,pre.length());
-            for(;pre.length()!=0;)
-            {
-                a=r.nextInt(pre.length());
-                post.append(pre.charAt(a));
-                pre.delete(a,a+1);
-            }
-            System.out.println(post.toString());
-        }
+        }catch(NoSuchElementException e){}
     }
 }
