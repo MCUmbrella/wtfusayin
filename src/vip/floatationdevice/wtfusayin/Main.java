@@ -1,11 +1,12 @@
 package vip.floatationdevice.wtfusayin;
-import java.util.*;
+import java.util.Scanner;
+import java.util.Random;
 public class Main
 {
     final static Random r=new Random();
     final static Scanner i=new Scanner(System.in);
     static int a;
-    static StringBuilder pre = new StringBuilder();
+    static StringBuilder pre=new StringBuilder();
     static StringBuilder post=new StringBuilder();
     public static void main(String args[])
     {
@@ -25,9 +26,10 @@ public class Main
         }else
         {
             for(String s:args){pre.append(s).append(' ');}
+            pre.delete(pre.length()-1,pre.length());
             for(;pre.length()!=0;)
             {
-                a=new Random().nextInt(pre.length());
+                a=r.nextInt(pre.length());
                 post.append(pre.charAt(a));
                 pre.delete(a,a+1);
             }
