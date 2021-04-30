@@ -158,8 +158,7 @@ public class Main
         }
         else
         {
-            System.out.println("wtfusayin.jar <-g>||<-c [string] >");
-            //new GUI().setVisible(true);
+            System.out.println("wtfusayin.jar <-g>||<-c [string]>");
         }
     }
 }
