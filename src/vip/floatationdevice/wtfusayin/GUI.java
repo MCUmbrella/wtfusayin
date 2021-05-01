@@ -2,7 +2,6 @@ package vip.floatationdevice.wtfusayin;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.UIManager;
 
@@ -19,10 +18,12 @@ import static vip.floatationdevice.wtfusayin.Main.destroy;
 
 public class GUI extends JFrame
 {
-    static JTextArea in=new JTextArea();
-    static JButton process=new JButton("PROCESS");
-    static JTextArea out=new JTextArea("* This is output area\n\nHelp:\n  - Press [F1] or the \"PROCESS\" button\n     to process the input\n  - Press F1 again to switch back to input area\n\nMade by MCUmbrella\nhttps://github.com/MCUmbrella/wtfusayin");
+    static final JTextArea in=new JTextArea();
+    static final JButton process=new JButton("PROCESS");
+    static final JTextArea out=new JTextArea("* This is output area\n\nHelp:\n  - Press [F1] or the \"PROCESS\" button to process the input\n  - Press F1 again to switch back to input area\n\nMade by MCUmbrella\nhttps://github.com/MCUmbrella/wtfusayin");
     private static final long serialVersionUID = 2L;
+    static final Random r=new Random();
+    static GUI ins;
     static final String title[]=
     {
         "What the f*ck are you saying",
@@ -36,7 +37,9 @@ public class GUI extends JFrame
         "Human language to enchanting table translator",
         "null",
         "bruh",
-        "https://github.com/MCUmbrella/wtfusayin"
+        "https://github.com/MCUmbrella/wtfusayin",
+        "The funny",
+        "Get real"
     };
     private static final ActionListener AL=new ActionListener()
     {
@@ -59,6 +62,7 @@ public class GUI extends JFrame
             process.setEnabled(true);
             in.setEnabled(true);
             out.setEnabled(true);
+            ins.setTitle(title[r.nextInt(title.length)]);
         }
     };
     private static final KeyListener IKL=new KeyListener()
@@ -87,9 +91,10 @@ public class GUI extends JFrame
     };
     GUI()
     {
+        ins=this;
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try{UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());}catch(Throwable ex){}
-        setTitle(title[new Random().nextInt(title.length)]);
+        setTitle(title[r.nextInt(title.length)]);
         setSize(640, 480);
         
         in.setLineWrap(true);
