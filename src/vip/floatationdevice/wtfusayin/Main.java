@@ -37,7 +37,8 @@ public class Main
             {
                 if (args.length == 1)
                 {
-                    for (; pre.append(i.nextLine()).length() != 0; )//TODO: Use ^D to end input in CLI
+                    //TODO: Use ^D to end input in CLI
+                    while (pre.append(i.nextLine()).length() != 0)
                     {
                         post.setLength(0);
                         destroy(pre, post);
@@ -55,7 +56,7 @@ public class Main
                     System.out.println(post.toString());
                 }
             }
-            catch (NoSuchElementException e)
+            catch (NoSuchElementException ignored)
             {
             }
         }

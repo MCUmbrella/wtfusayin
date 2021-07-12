@@ -116,7 +116,7 @@ public class GUI extends JFrame
         {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
-        catch (Throwable ex)
+        catch (Throwable ignored)
         {
         }
         setTitle(title[r.nextInt(title.length)]);
