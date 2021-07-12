@@ -24,7 +24,7 @@ public class GUI extends JFrame
     private static final long serialVersionUID = 2L;
     static final Random r = new Random();
     static GUI ins;
-    static final String title[] =
+    static final String[] title =
             {
                     "What the f*ck are you saying",
                     "String Destroyer™ GUI version 1.0.1",
