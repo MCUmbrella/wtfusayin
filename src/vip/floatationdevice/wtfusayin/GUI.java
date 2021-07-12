@@ -49,7 +49,7 @@ public class GUI extends JFrame
             process.setEnabled(false);
             in.setEnabled(false);
             out.setEnabled(false);
-            String inputs[] = in.getText().split("\n");
+            String[] inputs = in.getText().split("\n");
             for (int i = 0; i != inputs.length; i++)
             {
                 String h = inputs[i];

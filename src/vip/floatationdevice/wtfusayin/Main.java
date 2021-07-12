@@ -26,11 +26,13 @@ public class Main
     public static void main(String args[])
     {
         if (args.length == 1 && args[0].equals("-g"))
-        {//Graphical mode (GUI)
+        {
+            //Graphical mode (GUI)
             new GUI().setVisible(true);
         }
         else if (args.length >= 1 && args[0].equals("-c"))
-        {//Common mode (CLI)
+        {
+            //Common mode (CLI)
             try
             {
                 if (args.length == 1)
