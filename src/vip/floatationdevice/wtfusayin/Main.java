@@ -15,7 +15,7 @@ public class Main
 
     public static void destroy(StringBuilder old, StringBuilder processed)
     {
-        for (; old.length() != 0; )
+        while (old.length() != 0)
         {
             a = r.nextInt(old.length());
             processed.append(old.charAt(a));
@@ -23,7 +23,7 @@ public class Main
         }
     }
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         if (args.length == 1 && args[0].equals("-g"))
         {

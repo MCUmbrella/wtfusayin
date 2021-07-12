@@ -20,7 +20,16 @@ public class GUI extends JFrame
 {
     static final JTextArea in = new JTextArea();
     static final JButton process = new JButton("PROCESS");
-    static final JTextArea out = new JTextArea("* This is output area\n\nHelp:\n  - Press [F1] or the \"PROCESS\" button to process the input\n  - Press F1 again to switch back to input area\n\nMade by MCUmbrella\nhttps://github.com/MCUmbrella/wtfusayin");
+    static final JTextArea out = new JTextArea(
+            """
+                    * This is output area
+
+                    Help:
+                      - Press [F1] or the "PROCESS" button to process the input
+                      - Press F1 again to switch back to input area
+
+                    Made by MCUmbrella
+                    https://github.com/MCUmbrella/wtfusayin""");
     private static final long serialVersionUID = 2L;
     static final Random r = new Random();
     static GUI ins;
@@ -89,17 +98,17 @@ public class GUI extends JFrame
     private static final KeyListener OKL = new KeyListener()
     {
         @Override
-        public void keyTyped(KeyEvent e)
-        {
-        }
-
-        @Override
         public void keyPressed(KeyEvent e)
         {
             if (e.getKeyCode() == 112)
             {
                 in.grabFocus();
             }
+        }
+
+        @Override
+        public void keyTyped(KeyEvent e)
+        {
         }
 
         @Override
